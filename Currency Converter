@@ -1,0 +1,12 @@
+#required install forex-python package
+
+from forex_python.converter import CurrencyRates
+
+curr = CurrencyRates()
+
+fromcurrency = input("From Currency: ")
+tocurrency = input("To Currency: ")
+amount = float(input("Enter the amount: "))
+value = round(curr.convert(fromcurrency.upper(), tocurrency.upper(), amount), 3)
+
+print(f"{amount} {fromcurrency.upper()} = {value} {tocurrency.upper()}")
